@@ -35,7 +35,7 @@
                             
                             @if( auth()->check())
                            <li> <a href="/cursos">cursos</a></li>
-                           @if(auth()->user()->hasRoles('admin'))
+                           @if(auth()->user()->hasRoles(['admin','estudiante']))
                            <li><a href="/usuarios">usuarios</a></li> 
                            @endif
                             @endif
