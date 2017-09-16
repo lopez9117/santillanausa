@@ -17,9 +17,10 @@ Route::get('/', function () {
 
 Route::get('test',function(){
 	$user = new App\User;
-	$user->name = 'luis eduardo';
-	$user->email = 'luis.lopez@soportica.co';
+	$user->name = 'eduard';
+	$user->email = 'luiselm017@gmail.com';
 	$user->password = bcrypt('123456');
+	$user->role ='estudiante';
 	$user->save();
 
 	return $user;
@@ -32,3 +33,6 @@ Route::get('login','Auth\AuthController@showLoginForm');
 Route::post('login','Auth\AuthController@login');
 Route::get('logout','Auth\AuthController@logout');
 
+
+
+Route::get('usuarios' ,[ 'as' => 'usuarios', 'uses' =>'UsersController@index']);

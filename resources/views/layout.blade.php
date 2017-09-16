@@ -31,12 +31,15 @@
                             <li>
                             <a href="/">Home</a>
                             </li>
-                            <li>
+
+                            
                             @if( auth()->check())
-                            <a href="/cursos">cursos</a>
-                           
+                           <li> <a href="/cursos">cursos</a></li>
+                           @if(auth()->user()->role === 'admin')
+                           <li><a href="/usuarios">usuarios</a></li> 
+                           @endif
                             @endif
-                            </li>
+                            
                            
                     
                 </ul>
@@ -46,18 +49,17 @@
                             @if(auth()->guest())
                             <a href="/login">login</a>
                             @else
-                            <li> <a href="/logout">Cerrar sesion de: {{ auth()->user()->name }}</a></li>
-                            @endif
-                            </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
+                            
+                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ auth()->user()->name }}<b class="caret"></b></a>
+                                     <ul class="dropdown-menu">
+                            <li><a href="/logout">Cerrar session</a></li>
+                             
                         </ul>
                     </li>
+                            @endif
+                            </li>
+                   
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
