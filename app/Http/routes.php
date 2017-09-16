@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 Route::get('test',function(){
 	$user = new App\User;
-	$user->name = 'eduard';
-	$user->email = 'luiselm017@gmail.com';
+	$user->name = 'daisy';
+	$user->email = 'daisypnd@hotmail.com';
 	$user->password = bcrypt('123456');
-	$user->role ='estudiante';
+	$user->role ='profesor';
 	$user->save();
 
 	return $user;
