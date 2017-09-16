@@ -15,17 +15,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('roles', function () {
+    
+    	return App\Role::with('user')->get();
+});
+
 Route::get('test',function(){
 	$user = new App\User;
-	$user->name = 'daisy';
-	$user->email = 'daisypnd@hotmail.com';
+	$user->name = 'usuario_profesor';
+	$user->email = 'profesor@santillanausa.com';
 	$user->password = bcrypt('123456');
-	$user->role ='profesor';
 	$user->save();
 
 	return $user;
 
 });
+
+Route::get('test2',function(){
+	$roles = new App\Role;
+	$roles->name = 'estudiante';
+	$roles->display_name = 'estudiante del sistema';
+	$roles->description ='Usuario estudiante capas de visualizar cursos';
+	$roles->save();
+
+	return $roles;
+
+});
+
 
 Route::get('cursos' ,[ 'as' => 'cursos', 'uses' =>'CoursesController@index']);
 
