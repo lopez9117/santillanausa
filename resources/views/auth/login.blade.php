@@ -1,10 +1,17 @@
+	
+
+	@extends('layout')
+
+@section('contenido')
 <h1> Login </h1>
 
-<form method="POST"  action="/login">
+<form class="form-inline" method="POST"  action="/login">
 
 	{!! csrf_field() !!}
-	<input type="email" name="email" placeholder="email">
-	<input type="password" name="password" placeholder="password">	
-	<input type="submit" value="entrar">
+	<input class="form-control" type="email" name="email" placeholder="email">
+	<input class="form-control"required="" type="password" name="password" placeholder="password">	
+	<input class="btn btn-primary" type="submit" value="entrar">
 
 </form>
+
+@stop
