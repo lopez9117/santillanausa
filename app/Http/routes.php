@@ -52,3 +52,8 @@ Route::get('logout','Auth\AuthController@logout');
 
 
 Route::get('usuarios' ,[ 'as' => 'usuarios', 'uses' =>'UsersController@index']);
+/*Route::get('api/users' ,function(){
+	return Datatables::eloquent(App\User::query())->make(true);
+
+
+});*/

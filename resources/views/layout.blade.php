@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <title>Home</title>
 </head>
 <body>
@@ -76,5 +77,11 @@
 </div>
 
 <script src="/js/all.js" ></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script >
+$(document).ready(function(){
+    $('#myTable').DataTable();
+});
+</script>
 </body>
 </html>

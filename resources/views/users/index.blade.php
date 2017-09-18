@@ -3,7 +3,7 @@
 @section('contenido')
 	<h1>Usuarios</h1>
 
-	<table class="table">
+	<table class="table" id="myTable">
 		<thead>
 				
 				<tr>
@@ -34,4 +34,5 @@
 
 
 	</table>
+
 @stop
