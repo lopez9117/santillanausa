@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('roles', function () {
-    
-    	return App\Role::with('user')->get();
-});
+
+
+/*Route::get('roles', function () {
+   	return App\Role::with('user')->get();
+});*/
 
 Route::get('test',function(){
 	$user = new App\User;

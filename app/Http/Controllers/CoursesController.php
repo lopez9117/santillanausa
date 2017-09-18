@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use DB;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,7 +21,10 @@ class CoursesController extends Controller
 
 	public function index(){
 
-		 return view('cursos');
+		 //= \App\courses::all(); 
+ 
+		$courses = DB::table('courses')->get();
+		 return view('cursos.cursos', compact('courses'));
 	
 	}
 
